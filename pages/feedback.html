@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share a quick rating and comment to help improve GEN-FREE.">
+    <meta property="og:title" content="GEN-FREE | Building a Drug-Free Generation">
+    <meta property="og:description" content="Share a quick rating and comment to help improve GEN-FREE.">
+    <meta name="theme-color" content="#050c12">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23050c12' stroke='%2300ffc8' stroke-width='3'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EG%3C/text%3E%3C/svg%3E"><title>Feedback | GEN-FREE</title><link rel="stylesheet" href="../css/style.css"></head>
+<body>
+<div class="aurora-background"><div class="aurora aurora-one"></div><div class="aurora aurora-two"></div><div class="aurora aurora-three"></div></div>
+<header class="site-header"><nav class="navbar"><a href="../index.html" class="brand"><span class="brand-mark">G</span><span class="brand-content"><span class="brand-name">GEN<span>-</span>FREE</span><span class="brand-tagline">Building a Drug-Free Generation</span></span></a><div class="nav-links"><a href="../index.html">Home</a><a href="risks.html">Explore</a><a href="quiz.html">Quiz</a><a href="findings.html">Findings</a><a href="support.html">Support</a></div><a href="progress.html" class="nav-button">My Progress</a></nav></header>
+<main class="support-page-cta" style="min-height:65vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 24px"><div class="section-eyebrow">YOUR EXPERIENCE MATTERS</div><h1>Help us improve <span>GEN-FREE.</span></h1><p>Share a quick rating and optional comment about your awareness journey.</p><form id="feedback-form" style="width:min(600px,100%);display:grid;gap:14px;text-align:left"><label>How useful was GEN-FREE?</label><select id="feedback-rating" required><option value="">Choose a rating</option><option>1 - Not useful</option><option>2 - Slightly useful</option><option>3 - Useful</option><option>4 - Very useful</option><option>5 - Extremely useful</option></select><label>Comment (optional)</label><textarea id="feedback-comment" rows="5" placeholder="Tell us what you liked or what could improve."></textarea><button class="primary-button" type="submit">Submit Feedback →</button><div id="feedback-message"></div></form></main>
+<footer class="site-footer"><div class="footer-bottom"><span>© 2026 GEN-FREE</span><span>KNOW • QUESTION • CHOOSE</span></div></footer>
+<script src="../js/config.js"></script>
+<script src="../js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('feedback-form');
+    var message = document.getElementById('feedback-message');
+    if (!form || !message) return;
+    message.setAttribute('aria-live', 'polite');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!window.GENFREE || !window.GENFREE.getUser()) {
+            message.textContent = 'Please log in so your feedback can be saved.';
+            if (window.GENFREE) window.GENFREE.showAuthModal('login');
+            return;
+        }
+        var rating = document.getElementById('feedback-rating').value;
+        var comment = document.getElementById('feedback-comment').value.trim().slice(0, 2000);
+        window.GENFREE.updateUser(function (u) {
+            u.feedback = u.feedback || [];
+            u.feedback.push({ rating: rating, comment: comment, date: new Date().toISOString() });
+        });
+        window.GENFREE.addActivity('feedback_submitted', 'Feedback submitted');
+        message.textContent = 'Thank you — your feedback has been saved.';
+        form.reset();
+    });
+});
+</script>
+</body></html>

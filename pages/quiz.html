@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test your drug-awareness knowledge with rotating GEN-FREE quiz sets and track your scores.">
+    <meta property="og:title" content="GEN-FREE | Building a Drug-Free Generation">
+    <meta property="og:description" content="Test your drug-awareness knowledge with rotating GEN-FREE quiz sets and track your scores.">
+    <meta name="theme-color" content="#050c12">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23050c12' stroke='%2300ffc8' stroke-width='3'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='32' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EG%3C/text%3E%3C/svg%3E">
+
+    <title>Awareness Quiz | GEN-FREE</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Aurora Background -->
+    <div class="aurora-background">
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+        <div class="aurora aurora-three"></div>
+    </div>
+
+
+    <!-- Navigation -->
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a href="../index.html" class="brand">
+
+                <div class="brand-mark">
+                    G
+                </div>
+
+                <div class="brand-content">
+
+                    <span class="brand-name">
+                        GEN-FREE
+                    </span>
+
+                    <span class="brand-tagline">
+                        Building a Drug-Free Generation
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="risks.html">
+                    Explore
+                </a>
+
+                <a href="quiz.html" class="active">
+                    Quiz
+                </a>
+
+                <a href="findings.html">
+                    Findings
+                </a>
+
+                <a href="support.html">
+                    Support
+                </a>
+
+            </div>
+
+
+            <a href="awareness.html" class="nav-button">
+                Start Awareness
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+<!-- =========================
+     QUIZ HERO
+========================= -->
+
+<section class="quiz-hero">
+
+    <div class="quiz-hero-content">
+
+        <span class="inner-eyebrow">
+            TEST • LEARN • GROW
+        </span>
+
+        <h1>
+            How much do you
+            <span>really know?</span>
+        </h1>
+
+        <p>
+            Take the GEN-FREE awareness challenge and test
+            your understanding of drug abuse, peer pressure
+            and safer decision-making.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         GEN-FREE QUESTIONS VISUAL
+    ========================= -->
+
+    <div class="quiz-hero-visual">
+
+        <div class="quiz-ring quiz-ring-one"></div>
+
+        <div class="quiz-ring quiz-ring-two"></div>
+
+        <div class="quiz-core">
+
+            <span class="quiz-core-top">
+                GEN-FREE
+            </span>
+
+            <strong class="quiz-core-title">
+                QUESTIONS
+            </strong>
+
+            <span class="quiz-core-bottom">
+                TEST • LEARN • GROW
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+        <!-- Quiz Area -->
+        <section class="quiz-section">
+
+            <div class="quiz-container">
+
+                <!-- Progress -->
+                <div class="quiz-progress">
+
+                    <div class="quiz-progress-top">
+
+                        <span>
+                            QUESTION
+                        </span>
+
+                        <strong>
+                            <span id="current-question">1</span>
+                            /
+                            <span id="total-questions">5</span>
+                        </strong>
+
+                    </div>
+
+                    <div class="quiz-progress-bar">
+
+                        <div
+                            class="quiz-progress-fill"
+                            id="quiz-progress-fill">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Question -->
+                <div class="quiz-card" id="quiz-card">
+                    <div id="quiz-set-name" class="section-eyebrow" style="margin-bottom:12px">Loading set…</div>
+
+                    <div class="quiz-question-number">
+                        01
+                    </div>
+
+                    <span class="quiz-label">
+                        AWARENESS CHECK
+                    </span>
+
+                    <h2 id="question-text">
+                        Loading question...
+                    </h2>
+
+
+                    <div class="quiz-options">
+
+                        <button
+                            class="quiz-option"
+                            data-answer="a">
+
+                            <span class="option-letter">
+                                A
+                            </span>
+
+                            <span>
+                                Option A
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="quiz-option"
+                            data-answer="b">
+
+                            <span class="option-letter">
+                                B
+                            </span>
+
+                            <span>
+                                Option B
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="quiz-option"
+                            data-answer="c">
+
+                            <span class="option-letter">
+                                C
+                            </span>
+
+                            <span>
+                                Option C
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="quiz-option"
+                            data-answer="d">
+
+                            <span class="option-letter">
+                                D
+                            </span>
+
+                            <span>
+                                Option D
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Feedback -->
+                    <div
+                        class="quiz-feedback"
+                        id="quiz-feedback">
+
+                        <strong id="feedback-title">
+                            Good to know
+                        </strong>
+
+                        <p id="feedback-text">
+                            Select an answer to see the explanation.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Navigation -->
+                    <div class="quiz-navigation">
+
+                        <span
+                            class="quiz-score"
+                            id="quiz-score">
+
+                            Score: 0
+
+                        </span>
+
+                        <button
+                            class="quiz-next"
+                            id="quiz-next"
+                            disabled>
+
+                            Next Question →
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Result -->
+                <div
+                    class="quiz-result"
+                    id="quiz-result">
+
+                    <div class="result-circle">
+
+                        <span>
+                            YOUR SCORE
+                        </span>
+
+                        <strong id="final-score">
+                            0
+                        </strong>
+
+                        <small>
+                            / 5
+                        </small>
+
+                    </div>
+
+
+                    <div class="result-content">
+
+                        <span class="section-eyebrow">
+                            CHALLENGE COMPLETE
+                        </span>
+
+                        <div id="result-set-name" class="section-eyebrow" style="margin-bottom:12px"></div>
+                        <h2 id="result-title">
+                            Keep learning.
+                        </h2>
+
+                        <p id="result-message">
+                            Every question is an opportunity to
+                            improve your awareness.
+                        </p>
+
+                        <div class="result-actions">
+
+                            <button
+                                class="primary-button"
+                                id="restart-quiz">
+
+                                Try Again
+
+                            </button>
+
+                            <a
+                                href="risks.html"
+                                class="secondary-button">
+
+                                Explore Risks
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Awareness Reminder -->
+        <section class="quiz-reminder">
+
+            <div class="quiz-reminder-line"></div>
+
+            <div class="quiz-reminder-content">
+
+                <span>
+                    GEN-FREE REMINDER
+                </span>
+
+                <h2>
+                    The goal isn't just a
+                    <strong>high score.</strong>
+                </h2>
+
+                <p>
+                    The real goal is understanding, awareness and
+                    confidence to make informed choices.
+                </p>
+
+            </div>
+
+            <div class="quiz-reminder-line"></div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="quiz-cta">
+
+            <span class="section-eyebrow">
+                KEEP EXPLORING
+            </span>
+
+            <h2>
+                Knowledge can help you
+                <span>make better choices.</span>
+            </h2>
+
+            <p>
+                Continue exploring GEN-FREE to learn about risks,
+                myths, peer pressure and support.
+            </p>
+
+            <a
+                href="support.html"
+                class="primary-button">
+
+                Find Support →
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+
+                    <div class="footer-mark">
+                        G
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            GEN-FREE
+                        </strong>
+
+                        <span>
+                            Building a Drug-Free Generation
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    Awareness today. Better choices tomorrow.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <span class="footer-title">
+                        Explore
+                    </span>
+
+                    <a href="risks.html">
+                        Risks & Effects
+                    </a>
+
+                    <a href="myths.html">
+                        Myth vs Fact
+                    </a>
+
+                    <a href="pressure.html">
+                        Peer Pressure
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <span class="footer-title">
+                        Resources
+                    </span>
+
+                    <a href="quiz.html">
+                        Awareness Quiz
+                    </a>
+
+                    <a href="findings.html">
+                        Survey Findings
+                    </a>
+
+                    <a href="support.html">
+                        Support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 GEN-FREE
+            </span>
+
+            <span>
+                Building a Drug-Free Generation
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Quiz JavaScript -->
+    <script src="../js/quiz.js"></script>
+
+<script src="../js/config.js"></script>
+<script src="../js/main.js"></script>
+</body>
+
+</html>
